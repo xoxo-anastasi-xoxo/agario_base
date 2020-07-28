@@ -3,7 +3,7 @@ import '../css/index.css';
 import {Scene} from './objects/scene';
 
 // Устанавливаем соединение с сервером.
-const socket = new WebSocket('ws://192.168.1.219:3000');
+const socket = new WebSocket('ws://localhost:3000');
 
 // Создаем основные глобальные объекты нашего игрового мира.
 let canvas; // HTML-элемент svg, в котором мы будем отрисовывать свой мир.
@@ -43,20 +43,8 @@ socket.addEventListener('message', ({data}) => {
     }
 });
 
-// Настраиваем передвижение игрока.
-const mousePosition = {
-    x: 0,
-    y: 0,
-};
-document.addEventListener('mousemove', (e) => {
-    mousePosition.x = e.x;
-    mousePosition.y = e.y;
-});
-setInterval(() => {
-    if (scene) {
-        scene.mainPlayer.move(mousePosition.x, mousePosition.y);
-    }
-}, 15);
+// TODO Настраиваем передвижение игрока.
+
 
 // Создаем сцену.
 window.onload = () => {

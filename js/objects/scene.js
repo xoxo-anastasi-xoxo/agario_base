@@ -42,10 +42,7 @@ export class Scene {
             this.elem.setAttribute('stroke', '#a58b8b');
             this.transformElem.appendChild(this.elem);
         }
-        this.transformElem.setAttribute('transform', `translate(${-this.mainPlayer.x + innerWidth / 2}, ${-this.mainPlayer.y + innerHeight / 2})`);
-
-        this.foodPoints.forEach((foodPoint) => foodPoint.draw(this.transformElem));
-        this.players.forEach((player) => player.draw(this.transformElem));
+        // TODO отрисовать еду и игроков (всех) :)
     }
 
     // Удаление сцены.
